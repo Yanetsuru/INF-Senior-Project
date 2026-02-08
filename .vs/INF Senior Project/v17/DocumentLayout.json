@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\janej\\source\\repos\\INF_Senior_Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\source\\repos\\inf_senior_project\\inf senior project\\inf senior project.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\inf senior project.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\source\\repos\\inf_senior_project\\inf senior project\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\source\\repos\\inf_senior_project\\inf senior project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\source\\repos\\inf_senior_project\\inf senior project\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\source\\repos\\inf_senior_project\\inf senior project\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\janej\\source\\repos\\INF_Senior_Project\\INF Senior Project\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "INF Senior Project\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\janej\\source\\repos\\INF_Senior_Project\\INF Senior Project\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "INF Senior Project\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-08T20:16:33.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "INF Senior Project.csproj",
+              "DocumentMoniker": "C:\\Users\\janej\\source\\repos\\INF_Senior_Project\\INF Senior Project\\INF Senior Project.csproj",
+              "RelativeDocumentMoniker": "INF Senior Project\\INF Senior Project.csproj",
+              "ToolTip": "C:\\Users\\janej\\source\\repos\\INF_Senior_Project\\INF Senior Project\\INF Senior Project.csproj",
+              "RelativeToolTip": "INF Senior Project\\INF Senior Project.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-08T20:16:10.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\janej\\source\\repos\\INF_Senior_Project\\INF Senior Project\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "INF Senior Project\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\janej\\source\\repos\\INF_Senior_Project\\INF Senior Project\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "INF Senior Project\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-08T20:12:51.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\janej\\source\\repos\\INF_Senior_Project\\INF Senior Project\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "INF Senior Project\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\janej\\source\\repos\\INF_Senior_Project\\INF Senior Project\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "INF Senior Project\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-08T20:12:38.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\janej\\source\\repos\\INF_Senior_Project\\INF Senior Project\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "INF Senior Project\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\janej\\source\\repos\\INF_Senior_Project\\INF Senior Project\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "INF Senior Project\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-08T20:11:30.166Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
