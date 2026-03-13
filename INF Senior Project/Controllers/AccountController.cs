@@ -1,0 +1,109 @@
+﻿using INF_Senior_Project.Data;
+using INF_Senior_Project.Models;
+using INF_Senior_Project.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+
+public class AccountController : Controller
+{
+    private readonly ApplicationDbContext _context;
+
+    public AccountController(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
+    public IActionResult Register()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Register(RegisterViewModel model)
+    {
+        if (!ModelState.IsValid)
+            return View(model);
+
+        bool emailExists = await _context.Users.AnyAsync(u => u.Email == model.Email);
+        if (emailExists)
+        {
+            ModelState.AddModelError("Email", "This email is already registered.");
+            return View(model);
+        }
+
+        var user = new User
+        {
+            Username = model.Username,
+            Email = model.Email,
+            PasswordHash = HashPassword(model.Password),
+            Role = model.Role
+        };
+
+        _context.Users.Add(user);
+        await _context.SaveChangesAsync();
+
+        return RedirectToAction("Login", "Account");
+    }
+
+    [HttpGet]
+    public IActionResult Login()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Login(LoginViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+
+        var user = _context.Users.FirstOrDefault(u => u.Email == model.Email);
+
+        if (user != null && user.PasswordHash == HashPassword(model.Password))
+        {
+            HttpContext.Session.SetString("UserRole", user.Role);
+            if (user.Role == "Admin")
+            {
+                return RedirectToAction("AdminDashboard", "Admin");
+            }
+
+            if (user.Role == "Pharmacist") 
+            {
+                return RedirectToAction("Dashboard", "Pharmacist");
+            }
+
+            if (user.Role == "InventoryManager")
+            {
+                return RedirectToAction("Dashboard", "Inventory");
+            }
+
+            if (user.Role == "Doctor")
+            {
+               return RedirectToAction("Dashboard", "Doctor");
+            }
+        }
+
+            ViewBag.Error = "Invalid login credentials";
+        return View();
+    }
+
+    private string HashPassword(string password)
+    {
+        using var sha256 = SHA256.Create();
+        var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+        return Convert.ToBase64String(bytes);
+    }
+
+    public IActionResult Logout()
+    {
+        HttpContext.Session.Remove("UserRole");
+        return RedirectToAction("Index", "Home");
+    }
+}

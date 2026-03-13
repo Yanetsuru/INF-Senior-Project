@@ -1,0 +1,25 @@
+﻿@model INF_Senior_Project.ViewModels.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<form asp-action="Register" method="post">
+
+    <input asp-for="Username" placeholder="Username" />
+
+    <input asp-for="Email" placeholder="Email" />
+
+    <input asp-for="Password" type="password" placeholder="Password" />
+
+    <select asp-for="Role">
+        <option value="Pharmacist">Pharmacist</option>
+        <option value="InventoryManager">Inventory Manager</option>
+        <option value="Doctor">Doctor</option>
+        <option value="Admin">Admin</option>
+    </select>
+
+    <button type="submit">Register</button>
+
+</form>
