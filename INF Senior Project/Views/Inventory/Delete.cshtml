@@ -1,0 +1,13 @@
+﻿@model Product
+
+<h2>Delete Product</h2>
+
+<p>Are you sure you want to delete this product?</p>
+
+<p><strong>@Model.Name</strong> - Supplier: @Model.Supplier?.Name</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Delete</button>
+    <a asp-action="InventoryDashboard">Cancel</a>
+</form>

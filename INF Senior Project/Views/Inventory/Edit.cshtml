@@ -1,0 +1,44 @@
+﻿@model Product
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+<h2>Edit Product</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Category</label>
+        <input asp-for="Category" class="form-control" />
+    </div>
+
+    <div>
+        <label>Price</label>
+        <input asp-for="Price" type="number" step="0.01" class="form-control" />
+    </div>
+
+    <div>
+        <label>Quantity</label>
+        <input asp-for="Quantity" type="number" class="form-control" />
+    </div>
+
+    <div>
+        <label>Expiration Date</label>
+        <input asp-for="ExpirationDate" type="date" class="form-control" />
+    </div>
+
+    <div>
+        <label>Supplier</label>
+        <select asp-for="SupplierId" class="form-control" asp-items="ViewBag.Suppliers">
+            <option value="">-- Select Supplier --</option> <!-- optional placeholder -->
+        </select>
+        <span asp-validation-for="SupplierId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

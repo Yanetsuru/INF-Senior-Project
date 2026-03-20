@@ -54,8 +54,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/janej/INF-Senior-Project/INF Senior Project/Views/Inventory/Dashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XERhc2hib2FyZC5jc2h0bWw=
+[C:/Users/janej/INF-Senior-Project/INF Senior Project/Views/Inventory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/janej/INF-Senior-Project/INF Senior Project/Views/Inventory/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/janej/INF-Senior-Project/INF Senior Project/Views/Inventory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/janej/INF-Senior-Project/INF Senior Project/Views/Inventory/InventoryDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XEludmVudG9yeURhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/janej/INF-Senior-Project/INF Senior Project/Views/Pharmacist/Dashboard.cshtml]

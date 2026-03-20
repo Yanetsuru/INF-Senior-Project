@@ -81,7 +81,7 @@ public class AccountController : Controller
 
             if (user.Role == "InventoryManager")
             {
-                return RedirectToAction("Dashboard", "Inventory");
+                return RedirectToAction("InventoryDashboard", "Inventory");
             }
 
             if (user.Role == "Doctor")
