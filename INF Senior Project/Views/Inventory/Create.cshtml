@@ -1,47 +1,43 @@
-﻿@using INF_Senior_Project.Models
-@model Product
-@using Microsoft.AspNetCore.Mvc.Rendering
+﻿@model INF_Senior_Project.Models.Product
+@{
+    ViewData["Title"] = "Create Product";
+}
 
-
-<h2>Add Product</h2>
+<h2>Create Product</h2>
 
 <form asp-action="Create" method="post">
-
-    <div asp-validation-summary="All" class="text-danger"></div>
-
-    <div>
-        <label>Name</label>
-        <input asp-for="Name" class="form-control" />
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" asp-for="Name" class="form-control" />
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
-
-    <div>
-        <label>Category</label>
-        <input asp-for="Category" class="form-control" />
+    <div class="form-group">
+        <label for="Category">Category</label>
+        <input type="text" asp-for="Category" class="form-control" />
+        <span asp-validation-for="Category" class="text-danger"></span>
     </div>
-
-    <div>
-        <label>Price</label>
-        <input asp-for="Price" type="number" step="0.01" class="form-control" />
+    <div class="form-group">
+        <label for="Price">Price</label>
+        <input type="number" asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
     </div>
-
-    <div>
-        <label>Quantity</label>
-        <input asp-for="Quantity" type="number" class="form-control" />
+    <div class="form-group">
+        <label for="Quantity">Quantity</label>
+        <input type="number" asp-for="Quantity" class="form-control" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
     </div>
-
-    <div>
-        <label>Expiration Date</label>
-        <input asp-for="ExpirationDate" type="date" class="form-control" />
+    <div class="form-group">
+        <label for="ExpirationDate">Expiration Date</label>
+        <input type="date" asp-for="ExpirationDate" class="form-control" />
+        <span asp-validation-for="ExpirationDate" class="text-danger"></span>
     </div>
-
-    <div>
-        <label>Supplier</label>
-        <select asp-for="SupplierId" class="form-control" asp-items="ViewBag.Suppliers">
-            <option value="">-- Select Supplier --</option> <!-- optional placeholder -->
-        </select>
+    <div class="form-group">
+        <label for="SupplierId">Supplier</label>
+        <select asp-for="SupplierId" class="form-control" asp-items="@(ViewData["Suppliers"] as SelectList)"></select>
         <span asp-validation-for="SupplierId" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary">Create</button>
 </form>
+
+<a href="@Url.Action("InventoryDashboard", "Inventory")">Back to Inventory</a>

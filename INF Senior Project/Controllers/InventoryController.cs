@@ -47,88 +47,27 @@ namespace INF_Senior_Project.Controllers
             return View(await products.ToListAsync());
         }
 
-        // CREATE GET
+        // CREATE - Show the form for adding a new product
         public IActionResult Create()
         {
-
-            ViewBag.Suppliers = new SelectList(_context.Suppliers, "Id", "Name");
+            ViewData["Suppliers"] = new SelectList(_context.Suppliers, "Id", "Name");
             return View();
         }
 
-        // CREATE POST
+        // CREATE - Handle form submission for adding a new product
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Models.Product product)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                ViewBag.Suppliers = new SelectList(_context.Suppliers, "Id", "Name", product.SupplierId);
-                return View(product);
+                _context.Add(product);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(InventoryDashboard));
             }
-
-            _context.Add(product); // EF tracks SupplierId automatically
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(InventoryDashboard));
-        }
-
-        // EDIT GET
-        public async Task<IActionResult> Edit(int id)
-        {
-            var product = await _context.Products
-                                        .Include(p => p.Supplier)
-                                        .FirstOrDefaultAsync(p => p.Id == id);
-
-            if (product == null) return NotFound();
-
-            ViewBag.Suppliers = new SelectList(_context.Suppliers, "Id", "Name", product?.SupplierId);
+            ViewData["Suppliers"] = new SelectList(_context.Suppliers, "Id", "Name", product.SupplierId);
             return View(product);
         }
-
-        // EDIT POST
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Models.Product product)
-        {
-            if (id != product.Id) return NotFound();
-
-            if (!ModelState.IsValid)
-            {
-                ViewBag.Suppliers = new SelectList(_context.Suppliers, "Id", "Name", product.SupplierId);
-                return View(product);
-            }
-
-            // fetch the existing entity
-            var existingProduct = await _context.Products.FindAsync(id);
-            if (existingProduct == null) return NotFound();
-
-            existingProduct.Name = product.Name;
-            existingProduct.Category = product.Category;
-            existingProduct.Price = product.Price;
-            existingProduct.Quantity = product.Quantity;
-            existingProduct.ExpirationDate = product.ExpirationDate;
-            existingProduct.SupplierId = product.SupplierId;
-
-            await _context.SaveChangesAsync();
-
-            return RedirectToAction(nameof(InventoryDashboard));
-        }
-
-        // DELETE
-        [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var product = await _context.Products.FindAsync(id);
-            if (product != null)
-            {
-                _context.Products.Remove(product);
-                await _context.SaveChangesAsync();
-            }
-            return RedirectToAction(nameof(InventoryDashboard));
-        }
-
-        private bool ProductExists(int id)
-        {
-            return _context.Products.Any(e => e.Id == id);
-        }
     }
+
 }

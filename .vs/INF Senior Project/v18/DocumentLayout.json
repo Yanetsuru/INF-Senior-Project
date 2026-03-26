@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\janej\\INF-Senior-Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\views\\inventory\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\views\\inventory\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\views\\inventory\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\views\\inventory\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\views\\inventory\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\views\\inventory\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,32 +23,16 @@
       "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\views\\inventory\\inventorydashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\views\\inventory\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\views\\inventory\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\views\\inventory\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\views\\inventory\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Migrations\\20260320075916_AddProducts3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:INF Senior Project\\Migrations\\20260320075916_AddProducts3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Migrations\\20260320061915_AddProducts2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:INF Senior Project\\Migrations\\20260320061915_AddProducts2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Migrations\\20260320055736_AddProducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:INF Senior Project\\Migrations\\20260320055736_AddProducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\views\\pharmacist\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -121,6 +105,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\migrations\\20260313063912_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\migrations\\20260313063912_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\migrations\\20260320075916_addproducts3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\migrations\\20260320075916_addproducts3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\migrations\\20260320055736_addproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\migrations\\20260320055736_addproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|c:\\users\\janej\\inf-senior-project\\inf senior project\\migrations\\20260320061915_addproducts2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{810F8FC0-56E9-4425-82D8-16C2C2659640}|INF Senior Project\\INF Senior Project.csproj|solutionrelative:inf senior project\\migrations\\20260320061915_addproducts2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -130,49 +126,67 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Inventory\\Create.cshtml",
-              "RelativeDocumentMoniker": "INF Senior Project\\Views\\Inventory\\Create.cshtml",
-              "ToolTip": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Inventory\\Create.cshtml",
-              "RelativeToolTip": "INF Senior Project\\Views\\Inventory\\Create.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAAAiwCoAAABJAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "INF Senior Project\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "INF Senior Project\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAiwCIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-20T06:02:55.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-13T06:25:36.929Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "InventoryController.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Controllers\\InventoryController.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\Controllers\\InventoryController.cs",
               "ToolTip": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Controllers\\InventoryController.cs",
               "RelativeToolTip": "INF Senior Project\\Controllers\\InventoryController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowHgAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAwEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-20T05:58:27.87Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Inventory\\Create.cshtml",
+              "RelativeDocumentMoniker": "INF Senior Project\\Views\\Inventory\\Create.cshtml",
+              "ToolTip": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Inventory\\Create.cshtml",
+              "RelativeToolTip": "INF Senior Project\\Views\\Inventory\\Create.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-26T22:01:18.922Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "Supplier.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Models\\Supplier.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\Models\\Supplier.cs",
               "ToolTip": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Models\\Supplier.cs",
               "RelativeToolTip": "INF Senior Project\\Models\\Supplier.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T05:53:38.549Z",
+              "WhenOpened": "2026-03-26T21:57:36.433Z",
               "EditorCaption": ""
             },
             {
@@ -183,39 +197,14 @@
               "RelativeDocumentMoniker": "INF Senior Project\\Models\\Product.cs",
               "ToolTip": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Models\\Product.cs",
               "RelativeToolTip": "INF Senior Project\\Models\\Product.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAcwBUAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T05:53:08.831Z",
+              "WhenOpened": "2026-03-26T21:57:32.022Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "INF Senior Project\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "INF Senior Project\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAAAiwCIAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-13T06:25:36.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "INF Senior Project\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "INF Senior Project\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAcwAkAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T06:04:54.488Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Inventory\\Delete.cshtml",
               "RelativeDocumentMoniker": "INF Senior Project\\Views\\Inventory\\Delete.cshtml",
@@ -223,12 +212,11 @@
               "RelativeToolTip": "INF Senior Project\\Views\\Inventory\\Delete.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-20T07:09:00.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-20T07:09:00.885Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Inventory\\Edit.cshtml",
               "RelativeDocumentMoniker": "INF Senior Project\\Views\\Inventory\\Edit.cshtml",
@@ -236,8 +224,7 @@
               "RelativeToolTip": "INF Senior Project\\Views\\Inventory\\Edit.cshtml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAiwCsAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-20T07:08:49.307Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-20T07:08:49.307Z"
             },
             {
               "$type": "Document",
@@ -247,14 +234,14 @@
               "RelativeDocumentMoniker": "INF Senior Project\\Views\\Inventory\\InventoryDashboard.cshtml",
               "ToolTip": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Inventory\\InventoryDashboard.cshtml",
               "RelativeToolTip": "INF Senior Project\\Views\\Inventory\\InventoryDashboard.cshtml",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwB4AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-13T06:42:42.757Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 26,
               "Title": "20260320075916_AddProducts3.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Migrations\\20260320075916_AddProducts3.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\Migrations\\20260320075916_AddProducts3.cs",
@@ -262,12 +249,11 @@
               "RelativeToolTip": "INF Senior Project\\Migrations\\20260320075916_AddProducts3.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T07:59:17.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-20T07:59:17.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 27,
               "Title": "20260320055736_AddProducts.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Migrations\\20260320055736_AddProducts.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\Migrations\\20260320055736_AddProducts.cs",
@@ -275,12 +261,11 @@
               "RelativeToolTip": "INF Senior Project\\Migrations\\20260320055736_AddProducts.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T05:57:37.069Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-20T05:57:37.069Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 28,
               "Title": "20260320061915_AddProducts2.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Migrations\\20260320061915_AddProducts2.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\Migrations\\20260320061915_AddProducts2.cs",
@@ -288,12 +273,11 @@
               "RelativeToolTip": "INF Senior Project\\Migrations\\20260320061915_AddProducts2.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T06:19:15.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-20T06:19:15.398Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\Data\\ApplicationDbContext.cs",
@@ -301,12 +285,11 @@
               "RelativeToolTip": "INF Senior Project\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T06:03:00.105Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-13T06:03:00.105Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 15,
               "Title": "_Layout.cshtml.css",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "INF Senior Project\\Views\\Shared\\_Layout.cshtml.css",
@@ -318,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Program.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\Program.cs",
@@ -330,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
               "Title": "AdminDashboard.cshtml",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Admin\\AdminDashboard.cshtml",
               "RelativeDocumentMoniker": "INF Senior Project\\Views\\Admin\\AdminDashboard.cshtml",
@@ -342,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 8,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Pharmacist\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "INF Senior Project\\Views\\Pharmacist\\Dashboard.cshtml",
@@ -354,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\appsettings.json",
               "RelativeDocumentMoniker": "INF Senior Project\\appsettings.json",
@@ -366,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 11,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Doctor\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "INF Senior Project\\Views\\Doctor\\Dashboard.cshtml",
@@ -378,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 9,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "INF Senior Project\\Views\\Account\\Register.cshtml",
@@ -390,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 25,
               "Title": "20260313063912_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Migrations\\20260313063912_InitialCreate.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\Migrations\\20260313063912_InitialCreate.cs",
@@ -402,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 16,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "INF Senior Project\\Views\\Account\\Login.cshtml",
@@ -414,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 18,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\ViewModels\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\ViewModels\\RegisterViewModel.cs",
@@ -426,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 17,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\ViewModels\\LoginViewModel.cs",
@@ -438,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 20,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Models\\User.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\Models\\User.cs",
@@ -450,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 21,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\Models\\ErrorViewModel.cs",
@@ -462,7 +445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 19,
               "Title": "INF Senior Project.csproj",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\INF Senior Project.csproj",
               "RelativeDocumentMoniker": "INF Senior Project\\INF Senior Project.csproj",
@@ -474,7 +457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 22,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "INF Senior Project\\Controllers\\HomeController.cs",
@@ -486,7 +469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 24,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "INF Senior Project\\Views\\Home\\Privacy.cshtml",
@@ -498,7 +481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 23,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\janej\\INF-Senior-Project\\INF Senior Project\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "INF Senior Project\\Views\\Home\\Index.cshtml",

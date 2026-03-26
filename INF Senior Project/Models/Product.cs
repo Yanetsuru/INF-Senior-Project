@@ -19,7 +19,7 @@ namespace INF_Senior_Project.Models
         public DateTime ExpirationDate { get; set; }
 
         [Required(ErrorMessage = "Please select a supplier")]
-        public int SupplierId { get; set; }
-        public Supplier Supplier { get; set; }
+        public int? SupplierId { get; set; }
+        public Supplier? Supplier { get; set; }
     }
 }
