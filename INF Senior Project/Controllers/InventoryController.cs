@@ -124,6 +124,37 @@ namespace INF_Senior_Project.Controllers
         {
             return _context.Products.Any(e => e.Id == id);
         }
+        
+
+        // Delete - Show the confirmation page to delete a product
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Products
+                .Include(p => p.Supplier)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
+        }
+
+        // DELETE - Confirm and delete the product
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var product = await _context.Products.FindAsync(id);
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(InventoryDashboard));
+        }
     }
 
 }
