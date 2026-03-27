@@ -28,20 +28,47 @@
                         </li>
                         @if (Context.Session.GetString("UserRole") != null)
                         {
+                            var role = Context.Session.GetString("UserRole");
+                            string dashboardController = "";
+
+                            switch (role)
+                            {
+                                case "Admin":
+                                    dashboardController = "Admin";
+                                    break;
+                                case "Pharmacist":
+                                    dashboardController = "Pharmacist";
+                                    break;
+                                case "InventoryManager":
+                                    dashboardController = "Inventory";
+                                    break;
+                                case "Doctor":
+                                    dashboardController = "Doctor";
+                                    break;
+                                default:
+                                    dashboardController = "Home";
+                                    break;
+                            }
+
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Account" asp-action="Logout">Logout</a>
+                                <a class="nav-link text-dark" asp-controller="@dashboardController" asp-action="Dashboard">Dashboard</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Logout</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Register</a>
                             </li>
                         }
+                         
                     </ul>
                 </div>
             </div>

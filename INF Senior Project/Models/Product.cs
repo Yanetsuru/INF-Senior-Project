@@ -21,5 +21,9 @@ namespace INF_Senior_Project.Models
         [Required(ErrorMessage = "Please select a supplier")]
         public int? SupplierId { get; set; }
         public Supplier? Supplier { get; set; }
+
+        // Navigation
+        public ICollection<OrderItem> OrderItems { get; set; }
+        public ICollection<PrescriptionItem> PrescriptionItems { get; set; }
     }
 }

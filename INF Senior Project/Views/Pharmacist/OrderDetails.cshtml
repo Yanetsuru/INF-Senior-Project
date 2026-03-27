@@ -1,0 +1,37 @@
+﻿@model INF_Senior_Project.Models.Order
+
+<h2>Order Details</h2>
+
+<div>
+    <p><strong>Order ID:</strong> @Model.Id</p>
+    <p><strong>Date:</strong> @Model.OrderDate.ToString("g")</p>
+    <p><strong>Total:</strong> @Model.TotalAmount.ToString("F2")</p>
+</div>
+
+<hr />
+
+<h4>Items</h4>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@item.Product.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.Product.Price.ToString("F2")</td>
+                <td>@(item.Quantity* item.Product.Price).ToString("F2")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Pharmacist" asp-action="MySales" class="btn btn-secondary">Back to My Sales</a>

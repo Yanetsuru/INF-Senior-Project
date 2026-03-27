@@ -69,6 +69,7 @@ public class AccountController : Controller
         if (user != null && user.PasswordHash == HashPassword(model.Password))
         {
             HttpContext.Session.SetString("UserRole", user.Role);
+            HttpContext.Session.SetInt32("UserId", user.Id);
             if (user.Role == "Admin")
             {
                 return RedirectToAction("AdminDashboard", "Admin");
@@ -82,11 +83,6 @@ public class AccountController : Controller
             if (user.Role == "InventoryManager")
             {
                 return RedirectToAction("InventoryDashboard", "Inventory");
-            }
-
-            if (user.Role == "Doctor")
-            {
-               return RedirectToAction("Dashboard", "Doctor");
             }
         }
 
@@ -104,6 +100,7 @@ public class AccountController : Controller
     public IActionResult Logout()
     {
         HttpContext.Session.Remove("UserRole");
+        HttpContext.Session.Remove("UserId");
         return RedirectToAction("Index", "Home");
     }
 }

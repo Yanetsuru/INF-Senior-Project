@@ -1,0 +1,119 @@
+﻿@using INF_Senior_Project.ViewModels
+@model CreateOrderViewModel
+
+
+<h2>Create Order (POS)</h2>
+
+<form asp-action="CreateOrder" method="post">
+
+    <div style="margin-bottom: 15px;">
+        <select id="productSelect" class="form-control">
+            <option value="">-- Select Product --</option>
+            @foreach (var p in Model.Products)
+            {
+                <option value="@p.Id" data-price="@p.Price">
+                    @p.Name (@p.Quantity in stock)
+                </option>
+            }
+        </select>
+
+        <input type="number" id="quantity" class="form-control mt-2" placeholder="Quantity" min="1" />
+
+        <button type="button" class="btn btn-primary mt-2" onclick="addItem()">Add</button>
+    </div>
+
+    <table class="table" id="orderTable">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h3>Total: <span id="grandTotal">0.00</span></h3>
+
+    <input type="hidden" name="TotalAmount" id="hiddenTotal" />
+
+    <button type="submit" class="btn btn-success mt-3">
+        Submit Order
+    </button>
+</form>
+
+<script>
+    let index = 0;
+
+    function addItem() {
+        const select = document.getElementById("productSelect");
+        const quantityInput = document.getElementById("quantity");
+
+        const productId = select.value;
+        const quantity = parseInt(quantityInput.value);
+
+        if (!productId || quantity <= 0) {
+            alert("Select a product and enter a valid quantity.");
+            return;
+        }
+
+        const productName = select.options[select.selectedIndex].text;
+        const price = parseFloat(select.options[select.selectedIndex].dataset.price);
+        const total = price * quantity;
+
+        // Add table row
+        const row = `
+            <tr id="row-${index}">
+                <td>${productName}</td>
+                <td>${quantity}</td>
+                <td>${price.toFixed(2)}</td>
+                <td>${total.toFixed(2)}</td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(${index})">X</button>
+                </td>
+            </tr>
+        `;
+
+        document.querySelector("#orderTable tbody").insertAdjacentHTML("beforeend", row);
+
+        // Add hidden inputs INSIDE the form
+        const form = document.querySelector("form");
+
+        form.insertAdjacentHTML("beforeend", `
+            <input type="hidden" name="Items[${index}].ProductId" value="${productId}" id="prod-${index}" />
+            <input type="hidden" name="Items[${index}].Quantity" value="${quantity}" id="qty-${index}" />
+        `);
+
+        index++;
+
+        updateTotal();
+
+        // Reset input
+        quantityInput.value = "";
+        select.selectedIndex = 0;
+    }
+
+    function removeItem(i) {
+        // Remove row
+        document.getElementById(`row-${i}`)?.remove();
+
+        // Remove hidden inputs
+        document.getElementById(`prod-${i}`)?.remove();
+        document.getElementById(`qty-${i}`)?.remove();
+
+        updateTotal();
+    }
+
+    function updateTotal() {
+        let total = 0;
+
+        document.querySelectorAll("#orderTable tbody tr").forEach(row => {
+            total += parseFloat(row.children[3].innerText);
+        });
+
+        document.getElementById("grandTotal").innerText = total.toFixed(2);
+        document.getElementById("hiddenTotal").value = total;
+    }
+</script>

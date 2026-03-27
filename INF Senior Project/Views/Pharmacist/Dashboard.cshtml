@@ -1,7 +1,80 @@
-﻿
-@{
-    ViewData["Title"] = "Dashboard";
-}
+﻿@using INF_Senior_Project.ViewModels
+@model PharmacistDashboardViewModel
 
-<h1>Dashboard for Pharmacists</h1>
+<h2>Pharmacist Dashboard</h2>
 
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="card p-3">
+            <h4>Today's Revenue</h4>
+            <h2>@Model.TodayRevenue.ToString("F2")</h2>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-3">
+            <h4>Orders Today</h4>
+            <h2>@Model.TodayOrdersCount</h2>
+        </div>
+    </div>
+
+</div>
+
+<hr />
+
+<h3>Quick Actions</h3>
+
+<a asp-controller="Pharmacist" asp-action="CreateOrder" class="btn btn-primary">
+    Create New Order
+</a>
+
+<a asp-controller="Pharmacist" asp-action="MySales" class="btn btn-secondary">
+    View My Sales
+</a>
+
+<hr />
+
+<h3>Recent Orders</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model.RecentOrders)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.OrderDate</td>
+                <td>@order.TotalAmount</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<h3>⚠ Low Stock Products</h3>
+
+<table class="table table-danger">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.LowStockProducts)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>
