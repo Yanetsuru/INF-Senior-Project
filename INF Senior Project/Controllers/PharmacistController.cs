@@ -41,7 +41,7 @@ namespace INF_Senior_Project.Controllers
                     .Take(5)
                     .ToList(),
 
-                // ✅ Low stock products = all products with quantity < 20
+                // Low stock products = all products with quantity < 20
                 LowStockProducts = _context.Products
             .Where(p => p.Quantity < 20)
             .ToList()
@@ -122,7 +122,14 @@ namespace INF_Senior_Project.Controllers
 
         private int GetCurrentUserId()
         {
-            return int.Parse(User.FindFirst("Id").Value);
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            if (userId == null)
+            {
+                throw new Exception("User is not logged in.");
+            }
+
+            return userId.Value;
         }
 
         public IActionResult MySales()
@@ -135,7 +142,7 @@ namespace INF_Senior_Project.Controllers
 
             // Get all orders created by this pharmacist
             var orders = _context.Orders
-                .Where(o => o.PharmacistId == userId) // assuming you store the creator in CreatedById
+                .Where(o => o.PharmacistId == userId) 
                 .OrderByDescending(o => o.OrderDate)
                 .ToList();
 

@@ -11,7 +11,10 @@
             <option value="">-- Select Product --</option>
             @foreach (var p in Model.Products)
             {
-                <option value="@p.Id" data-price="@p.Price">
+                <option value="@p.Id"
+                        data-price="@p.Price"
+                        data-stock="@p.Quantity"
+                        disabled="@(p.Quantity == 0 ? "disabled" : null)">
                     @p.Name (@p.Quantity in stock)
                 </option>
             }
@@ -38,6 +41,7 @@
     <h3>Total: <span id="grandTotal">0.00</span></h3>
 
     <input type="hidden" name="TotalAmount" id="hiddenTotal" />
+    <div asp-validation-summary="All" class="text-danger"></div>
 
     <button type="submit" class="btn btn-success mt-3">
         Submit Order
@@ -54,14 +58,35 @@
         const productId = select.value;
         const quantity = parseInt(quantityInput.value);
 
+        const stock = parseInt(select.options[select.selectedIndex].dataset.stock);
+
         if (!productId || quantity <= 0) {
             alert("Select a product and enter a valid quantity.");
+            return;
+        }
+
+        if (quantity > stock) {
+            alert(`Not enough stock! Only ${stock} available.`);
             return;
         }
 
         const productName = select.options[select.selectedIndex].text;
         const price = parseFloat(select.options[select.selectedIndex].dataset.price);
         const total = price * quantity;
+
+            // Reduce visible stock in dropdown
+        select.options[select.selectedIndex].dataset.stock -= quantity;
+
+        // Update text
+        const newStock = select.options[select.selectedIndex].dataset.stock;
+
+        select.options[select.selectedIndex].text =
+            `${productName.split('(')[0].trim()} (${newStock} in stock)`;
+
+        if (newStock <= 0) 
+        {
+                select.options[select.selectedIndex].disabled = true;
+        }
 
         // Add table row
         const row = `
@@ -95,13 +120,31 @@
         select.selectedIndex = 0;
     }
 
-    function removeItem(i) {
-        // Remove row
-        document.getElementById(`row-${i}`)?.remove();
+        function removeItem(i) {
+        const prodInput = document.getElementById(`prod-${i}`);
+        const qtyInput = document.getElementById(`qty-${i}`);
 
-        // Remove hidden inputs
-        document.getElementById(`prod-${i}`)?.remove();
-        document.getElementById(`qty-${i}`)?.remove();
+        if (prodInput && qtyInput) {
+            const productId = prodInput.value;
+            const quantity = parseInt(qtyInput.value);
+
+            const select = document.getElementById("productSelect");
+
+            for (let option of select.options) {
+                if (option.value == productId) {
+                    let currentStock = parseInt(option.dataset.stock);
+                    option.dataset.stock = currentStock + quantity;
+
+                    option.text =
+                        `${option.text.split('(')[0].trim()} (${option.dataset.stock} in stock)`;
+                    break;
+                }
+            }
+        }
+
+        document.getElementById(`row-${i}`)?.remove();
+        prodInput?.remove();
+        qtyInput?.remove();
 
         updateTotal();
     }

@@ -1,4 +1,5 @@
 ﻿using INF_Senior_Project.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace INF_Senior_Project.Models;
 
@@ -10,6 +11,8 @@ public class OrderItem
     public int ProductId { get; set; }
 
     public int Quantity { get; set; }
+
+    [Range(0, double.MaxValue)]
     public decimal Price { get; set; }
 
     // Navigation

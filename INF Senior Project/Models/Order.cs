@@ -9,6 +9,7 @@ public class Order
 
     public DateTime OrderDate { get; set; } = DateTime.Now;
 
+    [Range(0, double.MaxValue)]
     public decimal TotalAmount { get; set; }
 
     // FK → User (Pharmacist)
@@ -18,5 +19,5 @@ public class Order
     public User Pharmacist { get; set; }
 
     // Navigation
-    public ICollection<OrderItem> Items { get; set; }
+    public ICollection<OrderItem> Items { get; set; } = new List<OrderItem>();
 }

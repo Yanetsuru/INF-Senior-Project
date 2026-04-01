@@ -5,7 +5,7 @@ namespace INF_Senior_Project.ViewModels
 {
     public class CreateOrderViewModel
     {
-        public List<Product> Products { get; set; }
+        public List<Product> Products { get; set; } = new List<Product>();
 
         public List<OrderItemInputModel> Items { get; set; } = new();
 

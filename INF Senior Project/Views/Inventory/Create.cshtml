@@ -36,7 +36,7 @@
         <select asp-for="SupplierId" class="form-control" asp-items="@(ViewData["Suppliers"] as SelectList)"></select>
         <span asp-validation-for="SupplierId" class="text-danger"></span>
     </div>
-
+    <div asp-validation-summary="All" class="text-danger"></div>
     <button type="submit" class="btn btn-primary">Create</button>
 </form>
 

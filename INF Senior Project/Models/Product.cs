@@ -23,7 +23,7 @@ namespace INF_Senior_Project.Models
         public Supplier? Supplier { get; set; }
 
         // Navigation
-        public ICollection<OrderItem> OrderItems { get; set; }
-        public ICollection<PrescriptionItem> PrescriptionItems { get; set; }
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+        public ICollection<PrescriptionItem> PrescriptionItems { get; set; } = new List<PrescriptionItem>();
     }
 }
