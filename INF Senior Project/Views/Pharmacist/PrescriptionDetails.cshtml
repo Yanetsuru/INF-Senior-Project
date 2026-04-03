@@ -1,0 +1,53 @@
+﻿@model INF_Senior_Project.Models.Prescription
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+<h2>Prescription Details</h2>
+
+<p><strong>Patient:</strong> @Model.PatientName</p>
+<p><strong>Doctor:</strong> @Model.DoctorName</p>
+<p><strong>Date:</strong> @Model.DateIssued</p>
+<p><strong>Notes:</strong> @Model.Notes</p>
+
+<h4>Items</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@item.Product.Name</td>
+                <td>@item.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (!Model.IsFulfilled)
+{
+    <a asp-action="FulfillPrescription"
+           asp-route-id="@Model.Id"
+           class="btn btn-success"
+           onclick="return confirm('Fulfill this prescription?')">
+        ✔ Fulfill Prescription
+    </a>
+}
+else
+{
+    <span class="badge bg-success">Fulfilled</span>
+}

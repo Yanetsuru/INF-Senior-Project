@@ -1,7 +1,71 @@
 ﻿
-@{
-    ViewData["Title"] = "AdminDashboard";
-}
 
-<h1>AdminDashboard</h1>
+<h2 class="mb-4">Admin Dashboard</h2>
 
+<div class="row">
+
+    <!-- USERS -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm p-3">
+            <h4>👤 Users</h4>
+            <p>Manage user accounts, roles, and access.</p>
+
+            <a href="@Url.Action("Users", "Admin")" class="btn btn-primary">
+                Manage Users
+            </a>
+        </div>
+    </div>
+
+    <!-- AUDIT LOGS -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm p-3">
+            <h4>📜 Audit Logs</h4>
+            <p>View system activity and track changes.</p>
+
+            <a href="@Url.Action("AuditLogs", "Admin")" class="btn btn-secondary">
+                View Logs
+            </a>
+        </div>
+    </div>
+
+    <!-- SYSTEM SETTINGS -->
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm p-3">
+            <h4>⚙️ System Settings</h4>
+            <p>Configure system-wide settings.</p>
+
+            <a href="@Url.Action("Settings", "Admin")" class="btn btn-dark">
+                Open Settings
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<hr />
+
+<!-- OPTIONAL SUMMARY SECTION -->
+<div class="row mt-4">
+
+    <div class="col-md-3">
+        <div class="card text-center p-3 shadow-sm">
+            <h5>Total Users</h5>
+            <h3>@ViewBag.UserCount</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-center p-3 shadow-sm">
+            <h5>Total Logs</h5>
+            <h3>@ViewBag.LogCount</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-center p-3 shadow-sm">
+            <h5>Active Users</h5>
+            <h3>@ViewBag.ActiveUsers</h3>
+        </div>
+    </div>
+
+</div>

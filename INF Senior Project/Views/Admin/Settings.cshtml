@@ -1,0 +1,51 @@
+﻿@model INF_Senior_Project.Models.SystemSettings
+
+@{
+    ViewData["Title"] = "System Settings";
+}
+
+<h2 class="mb-4">⚙️ System Settings</h2>
+
+<form asp-action="Settings" method="post">
+
+    <div class="card p-4 shadow-sm">
+
+        <!-- Pharmacy Name -->
+        <div class="mb-3">
+            <label class="form-label">Pharmacy Name</label>
+            <input asp-for="PharmacyName" class="form-control" />
+        </div>
+
+        <!-- Currency -->
+        <div class="mb-3">
+            <label class="form-label">Currency</label>
+            <input asp-for="Currency" class="form-control" />
+        </div>
+
+        <!-- Low Stock Threshold -->
+        <div class="mb-3">
+            <label class="form-label">Low Stock Threshold</label>
+            <input asp-for="LowStockThreshold" type="number" class="form-control" />
+            <small class="text-muted">Products below this value will be marked as low stock.</small>
+        </div>
+
+        <!-- Tax Percentage -->
+        <div class="mb-3">
+            <label class="form-label">Tax Percentage (%)</label>
+            <input asp-for="TaxPercentage" type="number" step="0.01" class="form-control" />
+        </div>
+        <input type="hidden" asp-for="Id" />
+        <!-- Buttons -->
+        <div class="mt-4">
+            <button type="submit" class="btn btn-success">
+                💾 Save Settings
+            </button>
+
+            <a href="@Url.Action("AdminDashboard", "Admin")" class="btn btn-secondary">
+                Back to Dashboard
+            </a>
+        </div>
+
+    </div>
+
+</form>

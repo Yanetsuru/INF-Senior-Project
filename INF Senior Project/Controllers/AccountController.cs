@@ -1,7 +1,9 @@
-﻿using INF_Senior_Project.Data;
+﻿using Azure.Identity;
+using INF_Senior_Project.Data;
 using INF_Senior_Project.Models;
 using INF_Senior_Project.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Build.Tasks.Deployment.Bootstrapper;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Security.Cryptography;
@@ -45,7 +47,7 @@ public class AccountController : Controller
 
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
-
+        Log("Register", "User", user.Id);
         return RedirectToAction("Login", "Account");
     }
 
@@ -68,8 +70,15 @@ public class AccountController : Controller
 
         if (user != null && user.PasswordHash == HashPassword(model.Password))
         {
+            if (!user.IsActive)
+            {
+                ViewBag.Error = "Your account has been deactivated. Contact admin.";
+                return View(model);
+            }
             HttpContext.Session.SetString("UserRole", user.Role);
+            HttpContext.Session.SetString("UserName", user.Username);
             HttpContext.Session.SetInt32("UserId", user.Id);
+            Log("Login", "User", user.Id);
             if (user.Role == "Admin")
             {
                 return RedirectToAction("AdminDashboard", "Admin");
@@ -100,7 +109,30 @@ public class AccountController : Controller
     public IActionResult Logout()
     {
         HttpContext.Session.Remove("UserRole");
+        HttpContext.Session.Remove("UserName");
         HttpContext.Session.Remove("UserId");
         return RedirectToAction("Index", "Home");
+    }
+    private void Log(string action, string entity, int entityId)
+    {
+        string username;
+        if (HttpContext.Session.GetString("UserName") == null)
+        {
+             username = "Guest";
+        }
+        else
+        {
+            username = HttpContext.Session.GetString("UserName");
+        }
+        var log = new AuditLog
+        {
+            Action = action,
+            Entity = entity,
+            EntityId = entityId,
+            UserName = username
+        };
+
+        _context.AuditLogs.Add(log);
+        _context.SaveChanges();
     }
 }

@@ -116,7 +116,7 @@ namespace INF_Senior_Project.Controllers
             order.TotalAmount = total;
 
             await _context.SaveChangesAsync();
-
+            Log("Create", "Order", order.Id);
             return RedirectToAction("Dashboard");
         }
 
@@ -172,6 +172,171 @@ namespace INF_Senior_Project.Controllers
                 return NotFound();
 
             return View(order);
+        }
+
+        public IActionResult CreatePrescription()
+        {
+            var vm = new CreatePrescriptionViewModel
+            {
+                Products = _context.Products.ToList()
+            };
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreatePrescription(CreatePrescriptionViewModel model)
+        {
+            if (model.Items == null || !model.Items.Any())
+            {
+                ModelState.AddModelError("", "Prescription must contain at least one item.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                model.Products = _context.Products.ToList();
+                return View(model);
+            }
+
+            var prescription = new Prescription
+            {
+                PatientName = model.PatientName,
+                DoctorName = model.DoctorName,
+                DateIssued = model.DateIssued,
+                Notes = model.Notes
+            };
+
+            _context.Prescriptions.Add(prescription);
+            await _context.SaveChangesAsync();
+
+            foreach (var item in model.Items)
+            {
+                var product = await _context.Products.FindAsync(item.ProductId);
+
+                var prescItem = new PrescriptionItem
+                {
+                    PrescriptionId = prescription.Id,
+                    ProductId = item.ProductId,
+                    Quantity = item.Quantity
+                };
+
+                _context.PrescriptionItems.Add(prescItem);
+            }
+
+            await _context.SaveChangesAsync();
+
+            Log("Create", "Prescription", prescription.Id);
+
+            return RedirectToAction("Prescriptions");
+        }
+
+        public IActionResult Prescriptions()
+        {
+            var list = _context.Prescriptions
+                .OrderByDescending(p => p.DateIssued)
+                .ToList();
+
+            return View(list);
+        }
+
+        public IActionResult PrescriptionDetails(int id)
+        {
+            var prescription = _context.Prescriptions
+                .Include(p => p.Items)
+                .ThenInclude(i => i.Product)
+                .FirstOrDefault(p => p.Id == id);
+
+            if (prescription == null)
+                return NotFound();
+
+            return View(prescription);
+        }
+
+        public async Task<IActionResult> FulfillPrescription(int id)
+        {
+            var prescription = _context.Prescriptions
+                .Include(p => p.Items)
+                .ThenInclude(i => i.Product)
+                .FirstOrDefault(p => p.Id == id);
+
+            if (prescription == null)
+                return NotFound();
+
+            if (prescription.IsFulfilled)
+            {
+                TempData["Error"] = "Prescription already fulfilled.";
+                return RedirectToAction("PrescriptionDetails", new { id });
+            }
+
+            // 🚫 STOCK CHECK
+            foreach (var item in prescription.Items)
+            {
+                if (item.Product.Quantity < item.Quantity)
+                {
+                    TempData["Error"] = $"Not enough stock for {item.Product.Name}";
+                    return RedirectToAction("PrescriptionDetails", new { id });
+                }
+            }
+
+            // 🧾 CREATE ORDER
+            var order = new Order
+            {
+                OrderDate = DateTime.Now,
+                PharmacistId = GetCurrentUserId(),
+                TotalAmount = 0
+            };
+
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
+
+            decimal total = 0;
+
+            // 🔄 CREATE ORDER ITEMS + REDUCE STOCK
+            foreach (var item in prescription.Items)
+            {
+                var product = item.Product;
+
+                product.Quantity -= item.Quantity;
+
+                var orderItem = new OrderItem
+                {
+                    OrderId = order.Id,
+                    ProductId = product.Id,
+                    Quantity = item.Quantity,
+                    Price = product.Price
+                };
+
+                total += product.Price * item.Quantity;
+
+                _context.OrderItems.Add(orderItem);
+            }
+
+            order.TotalAmount = total;
+
+            // ✅ MARK AS FULFILLED
+            prescription.IsFulfilled = true;
+
+            await _context.SaveChangesAsync();
+
+            Log("Fulfill", "Prescription", prescription.Id);
+
+            TempData["Success"] = "Prescription fulfilled successfully!";
+
+            return RedirectToAction("PrescriptionDetails", new { id });
+        }
+
+        private void Log(string action, string entity, int entityId)
+        {
+            var log = new AuditLog
+            {
+                Action = action,
+                Entity = entity,
+                EntityId = entityId,
+                UserName = HttpContext.Session.GetString("UserId")
+            };
+
+            _context.AuditLogs.Add(log);
+            _context.SaveChanges();
         }
     }
 }

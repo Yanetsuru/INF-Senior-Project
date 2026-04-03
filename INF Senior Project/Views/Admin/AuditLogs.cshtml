@@ -1,0 +1,28 @@
+﻿@model List<INF_Senior_Project.Models.AuditLog>
+
+<h2>Audit Logs</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>Entity</th>
+            <th>Entity ID</th>
+            <th>User</th>
+            <th>Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr>
+                <td>@log.Action</td>
+                <td>@log.Entity</td>
+                <td>@log.EntityId</td>
+                <td>@log.UserName</td>
+                <td>@log.Timestamp.ToString("yyyy-MM-dd HH:mm")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

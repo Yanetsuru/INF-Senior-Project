@@ -63,6 +63,7 @@ namespace INF_Senior_Project.Controllers
             {
                 _context.Add(product);
                 await _context.SaveChangesAsync();
+                Log("Create", "Product", product.Id);
                 return RedirectToAction(nameof(InventoryDashboard));
             }
             ViewData["Suppliers"] = new SelectList(_context.Suppliers, "Id", "Name", product.SupplierId);
@@ -102,6 +103,7 @@ namespace INF_Senior_Project.Controllers
                 {
                     _context.Update(product);
                     await _context.SaveChangesAsync();
+                    Log("Edit", "Product", product.Id);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -151,9 +153,33 @@ namespace INF_Senior_Project.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var product = await _context.Products.FindAsync(id);
+            Log("Delete", "Product", id);
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(InventoryDashboard));
+        }
+
+        private void Log(string action, string entity, int entityId)
+        {
+            string username;
+            if (HttpContext.Session.GetString("UserName") == null)
+            {
+                username = "Guest";
+            }
+            else
+            {
+                username = HttpContext.Session.GetString("UserName");
+            }
+            var log = new AuditLog
+            {
+                Action = action,
+                Entity = entity,
+                EntityId = entityId,
+                UserName = username
+            };
+
+            _context.AuditLogs.Add(log);
+            _context.SaveChanges();
         }
     }
 

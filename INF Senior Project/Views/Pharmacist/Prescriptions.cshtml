@@ -1,0 +1,36 @@
+﻿@model List<INF_Senior_Project.Models.Prescription>
+
+<h2>Prescriptions</h2>
+
+<a asp-action="CreatePrescription" class="btn btn-primary mb-3">
+    New Prescription
+</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.PatientName</td>
+                <td>@p.DoctorName</td>
+                <td>@p.DateIssued.ToShortDateString()</td>
+                <td>
+                    @(p.IsFulfilled ? "Fulfilled" : "Pending")
+                </td>
+                <td>
+                    <a asp-action="PrescriptionDetails" asp-route-id="@p.Id"
+                       class="btn btn-sm btn-info">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -16,7 +16,8 @@ namespace INF_Senior_Project.Data
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Prescription> Prescriptions { get; set; }
         public DbSet<PrescriptionItem> PrescriptionItems { get; set; }
-
+        public DbSet<AuditLog> AuditLogs { get; set; }
+        public DbSet<SystemSettings> SystemSettings { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

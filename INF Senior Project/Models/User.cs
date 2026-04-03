@@ -20,7 +20,7 @@ namespace INF_Senior_Project.Models
         [Required]
         public string Role { get; set; }
 
-        public bool IsActive { get; set; } = true;
+        public bool IsActive { get; set; } = false;
 
         // Navigation
         public ICollection<Order> Orders { get; set; }

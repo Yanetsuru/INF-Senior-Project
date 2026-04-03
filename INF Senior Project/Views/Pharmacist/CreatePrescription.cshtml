@@ -1,0 +1,42 @@
+﻿@model INF_Senior_Project.ViewModels.CreatePrescriptionViewModel
+
+<h2>Create Prescription</h2>
+
+<form asp-action="CreatePrescription" method="post">
+
+    <div class="mb-3">
+        <label>Patient Name</label>
+        <input asp-for="PatientName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Doctor Name</label>
+        <input asp-for="DoctorName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Notes</label>
+        <textarea asp-for="Notes" class="form-control"></textarea>
+    </div>
+
+    <h4>Items</h4>
+
+    <div id="items">
+        <div class="row mb-2">
+            <div class="col">
+                <select name="Items[0].ProductId" class="form-control">
+                    @foreach (var product in Model.Products)
+                    {
+                        <option value="@product.Id">@product.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="col">
+                <input name="Items[0].Quantity" type="number" class="form-control" placeholder="Quantity" />
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Create</button>
+</form>

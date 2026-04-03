@@ -1,0 +1,42 @@
+﻿@model List<INF_Senior_Project.Models.User>
+
+<h2>User Management</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Username</td>
+                <td>@user.Email</td>
+                <td>@user.Role</td>
+                <td>
+                    @if (user.IsActive)
+                    {
+                        <span class="text-success">Active</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">Inactive</span>
+                    }
+                </td>
+                <td>
+                    <a href="@Url.Action("ToggleUser", "Admin", new { id = user.Id })"
+                           class="btn btn-sm @(user.IsActive ? "btn-danger" : "btn-success")">
+                        @(user.IsActive ? "Deactivate" : "Activate")
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
