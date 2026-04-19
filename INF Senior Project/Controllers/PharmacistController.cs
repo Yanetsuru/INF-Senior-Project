@@ -174,7 +174,7 @@ namespace INF_Senior_Project.Controllers
             return View(order);
         }
 
-        public IActionResult CreatePrescription()
+        public IActionResult CreatePrescription(Prescription model)
         {
             var vm = new CreatePrescriptionViewModel
             {
