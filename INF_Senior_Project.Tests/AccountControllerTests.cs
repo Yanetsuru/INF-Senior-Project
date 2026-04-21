@@ -37,7 +37,8 @@ public class AccountControllerTests
         {
             Username = "Old",
             Email = "john@test.com",
-            PasswordHash = "x"
+            PasswordHash = "x",
+            Role = "pharmacist"
         });
 
         db.SaveChanges();
@@ -49,7 +50,8 @@ public class AccountControllerTests
         {
             Username = "New",
             Email = "john@test.com",
-            Password = "123"
+            Password = "123",
+            Role = "pharmacist"
         };
 
         var result = await controller.Register(model);

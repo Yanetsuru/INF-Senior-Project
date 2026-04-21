@@ -1,6 +1,9 @@
 ﻿@model INF_Senior_Project.ViewModels.CreatePrescriptionViewModel
 
 <h2>Create Prescription</h2>
+<a href="@Url.Action("Dashboard", "Pharmacist")" class="btn btn-secondary">
+    Return
+</a>
 
 <form asp-action="CreatePrescription" method="post">
 

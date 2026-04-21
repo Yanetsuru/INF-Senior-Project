@@ -17,7 +17,7 @@ namespace INF_Senior_Project.Controllers
         }
 
         // LIST + SEARCH + SORT
-        public async Task<IActionResult> InventoryDashboard(string search, string sortOrder)
+        public async Task<IActionResult> Dashboard(string search, string sortOrder)
         {
             var products = from p in _context.Products.Include(p => p.Supplier)
                            select p;
@@ -64,7 +64,7 @@ namespace INF_Senior_Project.Controllers
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 Log("Create", "Product", product.Id);
-                return RedirectToAction(nameof(InventoryDashboard));
+                return RedirectToAction(nameof(Dashboard));
             }
             ViewData["Suppliers"] = new SelectList(_context.Suppliers, "Id", "Name", product.SupplierId);
             return View(product);
@@ -116,7 +116,7 @@ namespace INF_Senior_Project.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(InventoryDashboard));
+                return RedirectToAction(nameof(Dashboard));
             }
             ViewData["Suppliers"] = new SelectList(_context.Suppliers, "Id", "Name", product.SupplierId);
             return View(product);
@@ -156,7 +156,7 @@ namespace INF_Senior_Project.Controllers
             Log("Delete", "Product", id);
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(InventoryDashboard));
+            return RedirectToAction(nameof(Dashboard));
         }
 
         private void Log(string action, string entity, int entityId)

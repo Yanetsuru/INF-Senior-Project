@@ -48,7 +48,7 @@ namespace INF_Senior_Project.Controllers
             return RedirectToAction("Users");
         }
 
-        public IActionResult AdminDashboard()
+        public IActionResult Dashboard()
         {
             if (!IsAdmin()) return RedirectToAction("Login", "Account");
 
@@ -86,7 +86,7 @@ namespace INF_Senior_Project.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction("Settings");
+            return RedirectToAction("Dashboard");
         }
     }
 }

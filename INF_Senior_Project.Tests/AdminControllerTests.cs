@@ -19,7 +19,7 @@ public class AdminControllerTests
     {
         var db = TestDbFactory.Create();
 
-        db.Users.Add(new User { Username = "A" });
+        db.Users.Add(new User { Username = "A", Email = "adsda@gmail.com", PasswordHash = "asda", Role = "admin" });
         db.SaveChanges();
 
         var controller = new AdminController(db);
@@ -40,7 +40,10 @@ public class AdminControllerTests
         {
             Id = 1,
             Username = "User",
-            IsActive = true
+            IsActive = true,
+            Email = "smth@gmail.com",
+            PasswordHash = "asdasdaw",
+            Role = "admin"
         });
 
         db.SaveChanges();
@@ -57,14 +60,14 @@ public class AdminControllerTests
     {
         var db = TestDbFactory.Create();
 
-        db.Users.Add(new User { Username = "A", IsActive = true });
+        db.Users.Add(new User { Username = "A", IsActive = true, Email = "email@gmail.com", PasswordHash = "1adawd21", Role = "pharmacist" });
         db.SaveChanges();
 
         var controller = new AdminController(db);
         TestHelper.SetupSession(controller);
         controller.HttpContext.Session.SetString("UserRole", "Admin");
 
-        var result = controller.AdminDashboard();
+        var result = controller.Dashboard();
 
         Assert.IsType<ViewResult>(result);
     }

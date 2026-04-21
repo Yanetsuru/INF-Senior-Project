@@ -81,7 +81,7 @@ public class AccountController : Controller
             Log("Login", "User", user.Id);
             if (user.Role == "Admin")
             {
-                return RedirectToAction("AdminDashboard", "Admin");
+                return RedirectToAction("Dashboard", "Admin");
             }
 
             if (user.Role == "Pharmacist") 
@@ -91,7 +91,7 @@ public class AccountController : Controller
 
             if (user.Role == "InventoryManager")
             {
-                return RedirectToAction("InventoryDashboard", "Inventory");
+                return RedirectToAction("Dashboard", "Inventory");
             }
         }
 

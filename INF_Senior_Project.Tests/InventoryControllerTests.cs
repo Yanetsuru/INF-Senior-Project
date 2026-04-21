@@ -18,9 +18,12 @@ public class InventoryControllerTests
 
         var product = new Product
         {
+            Id = 2,
             Name = "Aspirin",
             Price = 5,
-            Quantity = 10
+            Quantity = 10,
+            Category = "drug",
+            SupplierId = 2
         };
 
         await controller.Create(product);
@@ -33,13 +36,17 @@ public class InventoryControllerTests
     {
         var db = TestDbFactory.Create();
 
-        db.Products.Add(new Product
+        var old = new Product
         {
             Id = 1,
             Name = "Old",
             Price = 1,
-            Quantity = 1
-        });
+            Quantity = 1,
+            Category = "drug",
+            SupplierId = 2
+        };
+
+        db.Products.Add(old);
 
         db.SaveChanges();
 
@@ -51,7 +58,9 @@ public class InventoryControllerTests
             Id = 1,
             Name = "New",
             Price = 10,
-            Quantity = 5
+            Quantity = 5,
+            Category = "drug",
+            SupplierId = 2
         };
 
         await controller.Edit(1, updated);
@@ -66,8 +75,12 @@ public class InventoryControllerTests
 
         db.Products.Add(new Product
         {
-            Id = 1,
-            Name = "Drug"
+            Id = 3,
+            Name = "New",
+            Price = 10,
+            Quantity = 5,
+            Category = "drug",
+            SupplierId = 2
         });
 
         db.SaveChanges();
@@ -75,7 +88,7 @@ public class InventoryControllerTests
         var controller = new InventoryController(db);
         TestHelper.SetupSession(controller);
 
-        await controller.DeleteConfirmed(1);
+        await controller.DeleteConfirmed(3);
 
         Assert.Empty(db.Products);
     }

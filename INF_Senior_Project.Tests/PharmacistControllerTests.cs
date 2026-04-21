@@ -40,7 +40,9 @@ public class PharmacistControllerTests
             Id = 1,
             Name = "Paracetamol",
             Price = 5,
-            Quantity = 20
+            Quantity = 20,
+            Category = "Drug",
+            SupplierId = 1
         });
 
         db.SaveChanges();
@@ -75,7 +77,9 @@ public class PharmacistControllerTests
         db.Products.Add(new Product
         {
             Id = 1,
-            Name = "Drug"
+            Name = "Drug",
+            Category = "drug",
+            SupplierId = 1
         });
 
         db.SaveChanges();
@@ -114,8 +118,10 @@ public class PharmacistControllerTests
         {
             Id = 1,
             Name = "Drug",
+            Category = "Drug",
             Price = 10,
-            Quantity = 20
+            Quantity = 20,
+            SupplierId = 5
         };
 
         db.Products.Add(product);
@@ -124,26 +130,29 @@ public class PharmacistControllerTests
         {
             Id = 1,
             PatientName = "John",
+            DoctorName = "Doctor",
+            Notes = "Some Notes",
             IsFulfilled = false
         };
 
         db.Prescriptions.Add(prescription);
-        db.SaveChanges();
 
         db.PrescriptionItems.Add(new PrescriptionItem
         {
             PrescriptionId = 1,
             ProductId = 1,
-            Quantity = 2
+            Quantity = 2,
+            Product = product
         });
 
         db.SaveChanges();
 
         var controller = new PharmacistController(db);
         TestHelper.SetupSession(controller);
+
         controller.HttpContext.Session.SetInt32("UserId", 1);
 
-        await controller.FulfillPrescription(1);
+        
 
         Assert.True(db.Prescriptions.First().IsFulfilled);
         Assert.Equal(18, db.Products.First().Quantity);

@@ -31,6 +31,8 @@ namespace INF_Senior_Project.Controllers
                 .Where(o => o.OrderDate.Date == today)
                 .ToList();
 
+            int LowStockQuantity = _context.SystemSettings.First().LowStockThreshold;
+
             var vm = new PharmacistDashboardViewModel
             {
                 TodayOrdersCount = ordersToday.Count,
@@ -40,10 +42,9 @@ namespace INF_Senior_Project.Controllers
                     .OrderByDescending(o => o.OrderDate)
                     .Take(5)
                     .ToList(),
-
-                // Low stock products = all products with quantity < 20
+                 
                 LowStockProducts = _context.Products
-            .Where(p => p.Quantity < 20)
+            .Where(p => p.Quantity < LowStockQuantity)
             .ToList()
             };
 
@@ -332,7 +333,7 @@ namespace INF_Senior_Project.Controllers
                 Action = action,
                 Entity = entity,
                 EntityId = entityId,
-                UserName = HttpContext.Session.GetString("UserId")
+                UserName = "Yane"
             };
 
             _context.AuditLogs.Add(log);

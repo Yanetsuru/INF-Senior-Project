@@ -1,6 +1,9 @@
 ﻿@model INF_Senior_Project.Models.Order
 
 <h2>Order Details</h2>
+<a href="@Url.Action("Dashboard", "Pharmacist")" class="btn btn-secondary">
+    Return
+</a>
 
 <div>
     <p><strong>Order ID:</strong> @Model.Id</p>
