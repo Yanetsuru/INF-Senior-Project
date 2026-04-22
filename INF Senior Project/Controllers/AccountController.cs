@@ -44,7 +44,7 @@ public class AccountController : Controller
             PasswordHash = HashPassword(model.Password),
             Role = model.Role
         };
-
+        Log("Register", "User", 0);
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
         Log("Register", "User", user.Id);
@@ -108,6 +108,7 @@ public class AccountController : Controller
 
     public IActionResult Logout()
     {
+        Log("Login", "User", (int)HttpContext.Session.GetInt32("UserId"));
         HttpContext.Session.Remove("UserRole");
         HttpContext.Session.Remove("UserName");
         HttpContext.Session.Remove("UserId");

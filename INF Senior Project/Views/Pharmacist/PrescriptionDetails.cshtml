@@ -20,9 +20,7 @@
 <p><strong>Notes:</strong> @Model.Notes</p>
 
 <h4>Items</h4>
-<a href="@Url.Action("Dashboard", "Pharmacist")" class="btn btn-secondary">
-    Return to Dashboard
-</a>
+
 
 <table class="table">
     <thead>
@@ -54,3 +52,9 @@ else
 {
     <span class="badge bg-success">Fulfilled</span>
 }
+<a href="@Url.Action("Prescriptions", "Pharmacist")" class="btn btn-secondary">
+    Return
+</a>
+<a href="@Url.Action("Dashboard", "Pharmacist")" class="btn btn-secondary">
+    Dashboard
+</a>

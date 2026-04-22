@@ -42,7 +42,7 @@ namespace INF_Senior_Project.Controllers
             var user = await _context.Users.FindAsync(id);
 
             user.IsActive = !user.IsActive;
-
+            Log("Toggle", "User", id);
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Users");
@@ -69,6 +69,7 @@ namespace INF_Senior_Project.Controllers
                 settings = new SystemSettings();
                 _context.SystemSettings.Add(settings);
                 _context.SaveChanges();
+                Log("Change", "Settings", (int)HttpContext.Session.GetInt32("UserId"));
             }
 
             return View(settings);
@@ -87,6 +88,29 @@ namespace INF_Senior_Project.Controllers
             }
 
             return RedirectToAction("Dashboard");
+        }
+
+        private void Log(string action, string entity, int entityId)
+        {
+            string username;
+            if (HttpContext.Session.GetString("UserName") == null)
+            {
+                username = "Guest";
+            }
+            else
+            {
+                username = HttpContext.Session.GetString("UserName");
+            }
+            var log = new AuditLog
+            {
+                Action = action,
+                Entity = entity,
+                EntityId = entityId,
+                UserName = username
+            };
+
+            _context.AuditLogs.Add(log);
+            _context.SaveChanges();
         }
     }
 }

@@ -1,9 +1,7 @@
 ﻿@model INF_Senior_Project.Models.Order
 
 <h2>Order Details</h2>
-<a href="@Url.Action("Dashboard", "Pharmacist")" class="btn btn-secondary">
-    Return
-</a>
+
 
 <div>
     <p><strong>Order ID:</strong> @Model.Id</p>
@@ -38,3 +36,6 @@
 </table>
 
 <a asp-controller="Pharmacist" asp-action="MySales" class="btn btn-secondary">Back to My Sales</a>
+<a href="@Url.Action("Dashboard", "Pharmacist")" class="btn btn-secondary">
+    Dashboard
+</a>

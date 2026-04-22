@@ -1,5 +1,6 @@
 ﻿using INF_Senior_Project.Data;
 using INF_Senior_Project.Models;
+using INF_Senior_Project.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Build.Tasks.Deployment.Bootstrapper;
@@ -19,8 +20,9 @@ namespace INF_Senior_Project.Controllers
         // LIST + SEARCH + SORT
         public async Task<IActionResult> Dashboard(string search, string sortOrder)
         {
-            var products = from p in _context.Products.Include(p => p.Supplier)
-                           select p;
+            var products = _context.Products
+            .Include(p => p.Supplier)
+            .AsQueryable();
 
             // 🔍 SEARCH
             if (!string.IsNullOrEmpty(search))
@@ -44,7 +46,13 @@ namespace INF_Senior_Project.Controllers
                 _ => products.OrderBy(p => p.Name),
             };
 
-            return View(await products.ToListAsync());
+            var vm = new InventoryDashboardViewModel
+            {
+                Products = await products.ToListAsync(),
+                Suppliers = await _context.Suppliers.ToListAsync()
+            };
+
+            return View(vm);
         }
 
         // CREATE - Show the form for adding a new product
@@ -146,6 +154,17 @@ namespace INF_Senior_Project.Controllers
 
             return View(product);
         }
+        public async Task<IActionResult> DeleteSupplier(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var supplier = await _context.Suppliers
+                .FirstOrDefaultAsync(s => s.Id == id);
+
+            if (supplier == null) return NotFound();
+
+            return View(supplier);
+        }
 
         // DELETE - Confirm and delete the product
         [HttpPost, ActionName("Delete")]
@@ -158,6 +177,83 @@ namespace INF_Senior_Project.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Dashboard));
         }
+
+        
+        [HttpPost, ActionName("DeleteSupplier")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteSupplierConfirmed(int id)
+        {
+            var supplier = await _context.Suppliers.FindAsync(id);
+            Log("Delete", "Supplier", id);
+            _context.Suppliers.Remove(supplier);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Dashboard));
+        }
+
+        public async Task<IActionResult> Suppliers()
+        {
+            var suppliers = await _context.Suppliers.ToListAsync();
+            return View();
+        }
+
+        public IActionResult CreateSupplier()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateSupplier(Supplier supplier)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Suppliers.Add(supplier);
+                await _context.SaveChangesAsync();
+                Log("Create", "Supplier", supplier.Id);
+                return RedirectToAction(nameof(Dashboard));
+            }
+
+            return View();
+        }
+
+        public async Task<IActionResult> EditSupplier(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var supplier = await _context.Suppliers.FindAsync(id);
+            if (supplier == null) return NotFound();
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditSupplier(int id, Supplier supplier)
+        {
+            if (id != supplier.Id) return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(supplier);
+                    await _context.SaveChangesAsync();
+                    Log("Edit", "Supplier", supplier.Id);
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!_context.Suppliers.Any(e => e.Id == supplier.Id))
+                        return NotFound();
+                    else
+                        throw;
+                }
+
+                return RedirectToAction(nameof(Dashboard));
+            }
+
+            return View();
+        }
+        
 
         private void Log(string action, string entity, int entityId)
         {

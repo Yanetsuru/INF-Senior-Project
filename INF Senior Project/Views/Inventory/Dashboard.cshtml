@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Product>
+﻿@using INF_Senior_Project.ViewModels
+@model InventoryDashboardViewModel
 
 <h2>Inventory</h2>
 
@@ -21,7 +22,7 @@
     </thead>
 
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Products)
         {
             <tr class="@(item.Quantity < 10 ? "table-danger" : "")">
                 <td>@item.Name</td>
@@ -41,3 +42,34 @@
 </table>
 
 <a asp-action="Create" class="btn btn-primary">Add Product</a>
+
+                
+
+<h2>Suppliers</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th style="width: 200px;">Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Suppliers)
+        {
+            <tr>
+                <td>@item.Name</td>
+
+                <td>
+                    <a asp-action="EditSupplier" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="DeleteSupplier" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+<a asp-action="CreateSupplier" class="btn btn-primary">Add Supplier</a>
